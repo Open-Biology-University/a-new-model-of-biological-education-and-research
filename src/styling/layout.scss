@@ -1,0 +1,45 @@
+@import "@mental-rebuilders/styles-reset-library/lib/base-reset.scss";
+@import "@mental-rebuilders/styles-reset-library/lib/utils.scss";
+
+$textColor: #535e59;
+
+body {
+  font-size: 16px;
+  line-height: 1.55rem;
+  color: $textColor;
+}
+
+.site-nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  @include reset-inner-list();
+  display: flex;
+  align-items: center;
+  border-top: 1px solid $textColor;
+  border-bottom: 1px solid $textColor;
+  .site-title {
+    display: block;
+    padding: 0.5rem;
+  }
+  &,
+  ul {
+    flex-wrap: wrap;
+  }
+  ul {
+    display: flex;
+    margin-left: auto;
+    margin-right: 0.5rem;
+  }
+  li + li {
+    margin-left: 1rem;
+  }
+  a {
+    @include reset-link($textColor, $textColor, $textColor, $textColor);
+    // display: block;
+  }
+}
+
+.page {
+  padding-top: 3rem;
+}

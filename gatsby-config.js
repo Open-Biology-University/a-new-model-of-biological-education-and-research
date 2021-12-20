@@ -2,8 +2,9 @@ const path = require("path");
 
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://www.yourdomain.tld",
-    title: "a-new-model-of-biological-education-and-research",
+    siteUrl:
+      "https://open-biology-university.github.io/a-new-model-of-biological-education-and-research",
+    title: "A New Model Of Biological Education And Research",
   },
   plugins: [
     {
@@ -14,6 +15,7 @@ module.exports = {
       },
     },
     "gatsby-plugin-typescript",
+    "gatsby-plugin-react-helmet",
     "gatsby-plugin-sass",
     "gatsby-plugin-image",
     "gatsby-plugin-react-helmet",
