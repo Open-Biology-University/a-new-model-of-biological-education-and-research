@@ -1,6 +1,7 @@
 // import * as React from "react"
 import React, { ReactNode } from "react";
 import { Helmet } from "react-helmet";
+import { MDXProvider } from "@mdx-js/react";
 import { Link } from "gatsby";
 import { SITE_TITLE } from "@/config/site";
 
@@ -15,20 +16,29 @@ const LINKS = [
   ["Methods for Funding", "/methods-for-funding"],
 ];
 
-interface ILayout {
+interface WrapperProps {
   children: ReactNode;
 }
 
-const Layout = ({ children }: ILayout) => {
+const shortcodes = {};
+
+const Layout = ({ children }: WrapperProps) => {
   return (
-    <>
+    <MDXProvider components={shortcodes}>
       <Helmet>
         <meta charSet="utf-8" />
         <title>{SITE_TITLE}</title>
       </Helmet>
       <div className="page">
         <nav className="site-nav">
-          <span className="site-title">{SITE_TITLE}</span>
+          <span className="site-title">
+            <a
+              href="https://github.com/Open-Biology-University"
+              target="_blank"
+            >
+              Open Biology University
+            </a>
+          </span>
           <ul>
             {LINKS.map(([text, path]) => (
               <li key={path}>
@@ -37,9 +47,11 @@ const Layout = ({ children }: ILayout) => {
             ))}
           </ul>
         </nav>
-        <main className="page-content">{children}</main>
+        <main className="page-content">
+          <div className="container">{children}</div>
+        </main>
       </div>
-    </>
+    </MDXProvider>
   );
 };
 
