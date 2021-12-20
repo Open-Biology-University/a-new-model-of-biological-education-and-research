@@ -1,9 +1,19 @@
+const path = require("path");
+
 module.exports = {
   siteMetadata: {
     siteUrl: "https://www.yourdomain.tld",
     title: "a-new-model-of-biological-education-and-research",
   },
   plugins: [
+    {
+      resolve: "gatsby-plugin-root-import",
+      options: {
+        // resolveModules: [],
+        "@": path.join(__dirname, "src"),
+      },
+    },
+    "gatsby-plugin-typescript",
     "gatsby-plugin-sass",
     "gatsby-plugin-image",
     "gatsby-plugin-react-helmet",
