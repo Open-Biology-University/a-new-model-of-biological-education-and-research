@@ -1,7 +1,9 @@
 @import "@mental-rebuilders/styles-reset-library/lib/base-reset.scss";
 @import "@mental-rebuilders/styles-reset-library/lib/utils.scss";
 
-$textColor: #535e59;
+// $textColor: #535e59;
+// $textColor: #434e49;
+$textColor: #333e39;
 
 body {
   font-size: 16px;
@@ -18,18 +20,38 @@ body {
   @include reset-inner-list();
   display: flex;
   align-items: center;
-  border-top: 1px solid $textColor;
-  border-bottom: 1px solid $textColor;
+  border-top: 1px solid #888;
+  border-bottom: 1px solid #888;
+  .title-section {
+    display: flex;
+    align-items: center;
+
+    a {
+      display: block;
+    }
+  }
   .site-title {
     display: block;
     text-align: center;
     // padding: 0.5rem;
     font-size: 1.5rem;
     flex: 1 1 auto;
+    padding-right: 7.5px;
   }
   .site-title a {
     color: #448;
     text-decoration: none;
+  }
+  .obu-title {
+    display: block;
+    padding-left: 7.5px;
+    font-size: 1.25rem;
+    border-left: 1px solid #999;
+  }
+  .obu-title a {
+    position: relative;
+    text-decoration: none;
+    color: #888;
   }
   &,
   ul {
@@ -40,7 +62,8 @@ body {
     margin-left: auto;
     flex: 1 1 auto;
     margin-right: 0.5rem;
-    justify-content: space-around;
+    // justify-content: space-around;
+    justify-content: center;
   }
   li {
     display: flex;
@@ -85,6 +108,7 @@ body {
 
 .container {
   max-width: 850px;
+  padding: 0 2rem;
 }
 
 h1 + p {
@@ -92,5 +116,16 @@ h1 + p {
 }
 
 p {
-  line-height: 1.75;
+  line-height: 2.25;
+}
+
+h2,
+h3 {
+  margin: 3rem 0 1rem;
+}
+
+.stand-apart {
+  margin: 2.5rem 0;
+  padding: 1rem;
+  background-color: #eee;
 }

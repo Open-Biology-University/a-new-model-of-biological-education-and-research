@@ -6,6 +6,7 @@ import { Link } from "gatsby";
 import { SITE_TITLE } from "@/config/site";
 
 const LINKS = [
+  ["Rationale", "/"],
   ["Bioinformatics", "/bioinformatics"],
   ["Reformed Biotechnology", "/reformed-biotechnology"],
   [
@@ -31,14 +32,19 @@ const Layout = ({ children }: WrapperProps) => {
       </Helmet>
       <div className="page">
         <nav className="site-nav">
-          <span className="site-title">
-            <a
-              href="https://github.com/Open-Biology-University"
-              target="_blank"
-            >
-              Open Biology University
-            </a>
-          </span>
+          <div className="title-section">
+            <span className="site-title">
+              <Link to="/">Home</Link>
+            </span>
+            <span className="obu-title">
+              <a
+                href="https://github.com/Open-Biology-University"
+                target="_blank"
+              >
+                Open Biology University
+              </a>
+            </span>
+          </div>
           <ul>
             {LINKS.map(([text, path]) => (
               <li key={path}>
