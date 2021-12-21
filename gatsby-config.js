@@ -1,6 +1,7 @@
 const path = require("path");
 
 module.exports = {
+  pathPrefix: "/a-new-model-of-biological-education-and-research",
   siteMetadata: {
     siteUrl:
       "https://open-biology-university.github.io/a-new-model-of-biological-education-and-research",
